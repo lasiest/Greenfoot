@@ -11,6 +11,13 @@ public class player extends Actor
     double dy = 1;
     double gravity = 1;
     
+    public player()
+    {
+        GreenfootImage image = getImage();  
+        image.scale(30, 30);
+        setImage(image);
+    }
+    
     public void act()
     {
         

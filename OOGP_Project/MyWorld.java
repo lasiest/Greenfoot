@@ -16,7 +16,11 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1, true); 
+        super(600, 400, 1, true);
+        
+        getBackground().setColor(new Color(135, 206, 235));
+        getBackground().fill();
+        
         prepare();
     }
     
