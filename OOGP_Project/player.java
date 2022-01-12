@@ -9,15 +9,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class player extends Actor
 {
     double dy = 1;
-    double gravity = 1.2;
+    double gravity = 1;
     
     public void act()
     {
         
         setLocation(getX(), (int)(getY()+dy));
         
-        if(Greenfoot.isKeyDown("up")){
-            dy = -15;
+        if(isTouching(platform.class)){
+            dy = 0;
+        }else{
+            dy += gravity;
+        }
+        
+        if(Greenfoot.isKeyDown("up") && isTouching(platform.class)){
+            dy = -10;
         }
         
         if(Greenfoot.isKeyDown("left")){
@@ -26,6 +32,5 @@ public class player extends Actor
             move(3);
         }
         
-        dy += gravity;
     }
 }

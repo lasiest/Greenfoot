@@ -19,6 +19,7 @@ public class MyWorld extends World
         super(600, 400, 1, true); 
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -27,5 +28,8 @@ public class MyWorld extends World
     {
         player player = new player();
         addObject(player,55,288);
+        platform platform = new platform();
+        addObject(platform,291,392);
+        player.setLocation(62,264);
     }
 }
