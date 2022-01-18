@@ -10,6 +10,8 @@ public class player extends Actor
 {
     double dy = 1;
     double gravity = 1;
+    private boolean rightButton;
+    private boolean leftButton;
     
     public player()
     {
@@ -28,16 +30,40 @@ public class player extends Actor
         }else{
             dy += gravity;
         }
+       
+        if(!rightButton && Greenfoot.isKeyDown("right")){
+            rightButton = true;
+            fireRight();
+        }else if(!leftButton && Greenfoot.isKeyDown("left")){
+            leftButton = true;
+            fireLeft();
+        }
         
-        if(Greenfoot.isKeyDown("up") && isTouching(platform.class)){
+        if(rightButton && !Greenfoot.isKeyDown("right")){
+            rightButton = false;
+        }else if(leftButton && !Greenfoot.isKeyDown("left")){
+            leftButton = false;
+        }
+        
+        if(Greenfoot.isKeyDown("w") && isTouching(platform.class)){
             dy = -10;
         }
         
-        if(Greenfoot.isKeyDown("left")){
+        if(Greenfoot.isKeyDown("a")){
             move(-3);
-        }else if(Greenfoot.isKeyDown("right")){
+        }else if(Greenfoot.isKeyDown("d")){
             move(3);
         }
         
+    }
+    
+    private void fireRight(){
+        Blob blob = new Blob();
+        getWorld().addObject(blob, getX(), getY());
+    }
+    
+    private void fireLeft(){
+        Blob2 blob2 = new Blob2();
+        getWorld().addObject(blob2, getX(), getY());
     }
 }
