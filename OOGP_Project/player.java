@@ -46,7 +46,7 @@ public class player extends Actor
         }
         
         if(Greenfoot.isKeyDown("w") && isTouching(platform.class)){
-            dy = -10;
+            dy = -12;
         }
         
         if(Greenfoot.isKeyDown("a")){
@@ -55,6 +55,12 @@ public class player extends Actor
             move(3);
         }
         
+        if(getOneIntersectingObject(enemy_1.class) != null)
+        {
+            System.out.println("Game Over");
+            Greenfoot.stop();
+            Greenfoot.setWorld(new MyWorld());
+        }
     }
     
     private void fireRight(){

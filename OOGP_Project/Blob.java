@@ -15,5 +15,14 @@ public class Blob extends player
     public void act()
     {
         move(10);
+        if(isAtEdge() == true)
+        {
+            getWorld().removeObject(this);
+        }
+        else if(isTouching(enemy_1.class))
+        {
+            removeTouching(enemy_1.class);
+            getWorld().removeObject(this);
+        }
     }
 }

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    int counter = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -35,5 +35,17 @@ public class MyWorld extends World
         platform platform = new platform();
         addObject(platform,291,392);
         player.setLocation(62,264);
+    }
+    
+    public void act()
+    {
+        counter++;
+        enemy_1 ant = new enemy_1();
+        if(counter == 80)
+        {
+            GreenfootImage ant_image = ant.getImage();
+            addObject(ant, 610, 300);
+            counter = 0;
+        }
     }
 }
