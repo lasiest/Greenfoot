@@ -31,20 +31,28 @@ public class MyWorld extends World
     private void prepare()
     {
         player player = new player();
-        addObject(player,55,288);
-        platform platform = new platform();
+        addObject(player,100,288);
+        platform platform = new platform(600, 100);
         addObject(platform,291,392);
-        player.setLocation(62,264);
+        platform.setLocation(300,400);
+        player.setLocation(55,311);
+
+        platform platform2 = new platform(100, 25);
+        addObject(platform2,550,300);
+
+        rock rock = new rock(110, 10);
+        addObject(rock,329,240);
+        rock.setLocation(550,310);
     }
     
     public void act()
     {
         counter++;
         enemy_1 ant = new enemy_1();
-        if(counter == 80)
+        if(counter == 100)
         {
             GreenfootImage ant_image = ant.getImage();
-            addObject(ant, 610, 300);
+            addObject(ant, 300, 100);
             counter = 0;
         }
     }

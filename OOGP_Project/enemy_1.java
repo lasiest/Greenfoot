@@ -8,26 +8,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class enemy_1 extends Actor
 {
-    /**
-     * Act - do whatever the enemy_1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    double dy = 1;
+    double gravity = 1;
+    
+    int flag = 0;
+    
     public void act()
     {
-        int flag = 0;
-        if(flag == 0)
-        {
-            move(-2);
-            if(getX() == 0)
+        
+        setLocation(getX(), (int)(getY()+dy));
+        
+        
+        if(isTouching(platform.class)){
+            dy = 0;
+        }else{
+            dy += gravity;
+        }
+        
+            if(flag == 0)
             {
-                flag = 1;
+                move(-2);
+                if(getX() == 0 || getX() == 599)
+                {
+                    flag = 1;
+                }
             }
-        }
-        if(flag == 1)
-        {
-            turn(180);
-            move(2);
-            flag = 0;
-        }
+            else if(flag == 1)
+            {
+                turn(180);
+                flag = 0;
+            }
+        
     }
+    
 }

@@ -12,6 +12,7 @@ public class player extends Actor
     double gravity = 1;
     private boolean rightButton;
     private boolean leftButton;
+
     
     public player()
     {
@@ -45,8 +46,12 @@ public class player extends Actor
             leftButton = false;
         }
         
-        if(Greenfoot.isKeyDown("w") && isTouching(platform.class)){
-            dy = -12;
+        if(isTouching(rock.class)){
+            dy += gravity;
+        }
+        
+        if(Greenfoot.isKeyDown("w") && isTouching(platform.class) && dy == 0){
+            dy = -15;
         }
         
         if(Greenfoot.isKeyDown("a")){
