@@ -51,9 +51,19 @@ public class MyWorld extends World
         enemy_1 ant = new enemy_1();
         if(counter == 100)
         {
-            GreenfootImage ant_image = ant.getImage();
-            addObject(ant, 300, 100);
-            counter = 0;
+            int num = Greenfoot.getRandomNumber(100);
+            if(num % 2 == 0)
+            {
+                GreenfootImage ant_image = ant.getImage();
+                addObject(ant, 600, 275);
+                counter = 0;
+            }
+            else
+            {
+                GreenfootImage ant_image = ant.getImage();
+                addObject(ant, 0, 320);
+                counter = 0;
+            }
         }
     }
 }
