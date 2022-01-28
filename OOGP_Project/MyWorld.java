@@ -31,18 +31,21 @@ public class MyWorld extends World
     private void prepare()
     {
         player player = new player();
-        addObject(player,100,288);
+        addObject(player,300,300);
         platform platform = new platform(600, 100);
-        addObject(platform,291,392);
-        platform.setLocation(300,400);
-        player.setLocation(55,311);
+        addObject(platform,300,400);
 
         platform platform2 = new platform(100, 25);
-        addObject(platform2,550,300);
-
+        addObject(platform2,550,280);
         rock rock = new rock(110, 10);
-        addObject(rock,329,240);
-        rock.setLocation(550,310);
+        addObject(rock,550,290);
+        
+        
+        platform platform3 = new platform(100, 25);
+        addObject(platform3,50,280);
+        
+        rock rock2 = new rock(110, 10);
+        addObject(rock2,50,290);
     }
     
     public void act()
@@ -52,16 +55,27 @@ public class MyWorld extends World
         if(counter == 100)
         {
             int num = Greenfoot.getRandomNumber(100);
-            if(num % 2 == 0)
+            num = num % 4;
+            if(num == 0)
             {
                 GreenfootImage ant_image = ant.getImage();
-                addObject(ant, 600, 275);
+                addObject(ant, 600, 260);
                 counter = 0;
             }
-            else
+            else if(num == 1)
             {
                 GreenfootImage ant_image = ant.getImage();
-                addObject(ant, 0, 320);
+                addObject(ant, 0, 260);
+                counter = 0;
+            }else if(num == 2)
+            {
+                 GreenfootImage ant_image = ant.getImage();
+                addObject(ant, 600, 330);
+                counter = 0;           
+            }else if(num == 3)
+            {
+                GreenfootImage ant_image = ant.getImage();
+                addObject(ant, 0, 330);
                 counter = 0;
             }
         }
