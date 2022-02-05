@@ -38,7 +38,6 @@ public class enemy_1 extends Actor
                 turn(180);
                 flag = 0;
             }
-        
     }
     
 }

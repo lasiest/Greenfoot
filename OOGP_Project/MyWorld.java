@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     int counter = 0;
+    int score = 0;
     
     SimpleTimer tim = new SimpleTimer();
     Counter timeCount = new Counter();
@@ -25,6 +26,7 @@ public class MyWorld extends World
         getBackground().fill();
         
         prepare();
+        showScore();
     }
     
     /**
@@ -113,5 +115,16 @@ public class MyWorld extends World
                 counter = 0;
             }
         }
+    }
+    
+    public void showScore()
+    {
+        showText("Score: "+score, 60, 25);
+    }
+    
+    public void addScore(int points)
+    {
+        score = score + points;
+        showScore();
     }
 }
