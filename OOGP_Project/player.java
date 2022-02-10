@@ -62,9 +62,9 @@ public class player extends Actor
         
         if(getOneIntersectingObject(enemy_1.class) != null)
         {
-            System.out.println("Game Over");
-            Greenfoot.stop();
-            Greenfoot.setWorld(new MyWorld());
+            //System.out.println("Game Over");
+            //Greenfoot.stop();
+            Greenfoot.setWorld(new EndScene());
         }
     }
     

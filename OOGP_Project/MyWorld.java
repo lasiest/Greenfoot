@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     int counter = 0;
-    int score = 0;
+    static int score = 0;
     
     SimpleTimer tim = new SimpleTimer();
-    Counter timeCount = new Counter();
+    static Counter timeCount = new Counter();
     /**
      * Constructor for objects of class MyWorld.
      * 
