@@ -19,12 +19,5 @@ public class Blob extends player
         {
             getWorld().removeObject(this);
         }
-        else if(isTouching(enemy_1.class))
-        {
-            MyWorld num = (MyWorld)getWorld();
-            num.addScore(10);
-            removeTouching(enemy_1.class);
-            getWorld().removeObject(this);
-        }
     }
 }

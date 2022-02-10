@@ -12,10 +12,10 @@ public class enemy_1 extends Actor
     double gravity = 1;
     
     int flag = 0;
+    int life = 2;
     
     public void act()
     {
-        
         setLocation(getX(), (int)(getY()+dy));
         
         
@@ -25,19 +25,43 @@ public class enemy_1 extends Actor
             dy += gravity;
         }
         
-            if(flag == 0)
+        if(flag == 0)
+        {
+            move(-2);
+            if(getX() == 0 || getX() == 599)
             {
-                move(-2);
-                if(getX() == 0 || getX() == 599)
-                {
-                    flag = 1;
-                }
-            }
-            else if(flag == 1)
+                flag = 1;
+              }
+        }
+        else if(flag == 1)
+        {
+            turn(180);
+            flag = 0;
+        }
+        
+        if(isTouching(Blob.class))
+        {
+            life--;
+            removeTouching(Blob.class);
+            if(life == 0)
             {
-                turn(180);
-                flag = 0;
+                MyWorld num = (MyWorld)getWorld();
+                num.addScore(10);
+                getWorld().removeObject(this);
             }
+        }
+        
+        else if(isTouching(Blob2.class))
+        {
+            life--;
+            removeTouching(Blob2.class);
+            if(life == 0)
+            {
+                MyWorld num = (MyWorld)getWorld();
+                num.addScore(10);
+                getWorld().removeObject(this);
+            }
+        }
     }
     
 }

@@ -88,7 +88,33 @@ public class MyWorld extends World
                 addObject(ant, 0, 330);
                 counter = 0;
             }
-        }else if(counter >= 50 && timeCount.getValue() >= 60)
+        }else if(counter >= 50 && (timeCount.getValue() >= 60 && timeCount.getValue() < 120))
+        {
+            int num = Greenfoot.getRandomNumber(100);
+            num = num % 4;
+            if(num == 0)
+            {
+                GreenfootImage ant_image = ant.getImage();
+                addObject(ant, 600, 260);
+                counter = 0;
+            }
+            else if(num == 1)
+            {
+                GreenfootImage ant_image = ant.getImage();
+                addObject(ant, 0, 260);
+                counter = 0;
+            }else if(num == 2)
+            {
+                 GreenfootImage ant_image = ant.getImage();
+                addObject(ant, 600, 330);
+                counter = 0;           
+            }else if(num == 3)
+            {
+                GreenfootImage ant_image = ant.getImage();
+                addObject(ant, 0, 330);
+                counter = 0;
+            }
+        }else if(counter >= 30 && timeCount.getValue() >= 120)
         {
             int num = Greenfoot.getRandomNumber(100);
             num = num % 4;
