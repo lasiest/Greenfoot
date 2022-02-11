@@ -64,6 +64,7 @@ public class player extends Actor
         {
             //System.out.println("Game Over");
             //Greenfoot.stop();
+            
             Greenfoot.setWorld(new EndScene());
         }
     }

@@ -36,6 +36,8 @@ public class EndScene extends World
         quit_button quit = new quit_button();
         addObject(quit, 400, 300);
         
-        showText("QUIT", 400, 300);        
+        showText("QUIT", 400, 300);
+        
+        MyWorld.score = 0;
     }
 }
