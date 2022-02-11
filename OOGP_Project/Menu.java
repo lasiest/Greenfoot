@@ -18,19 +18,17 @@ public class Menu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        getBackground().setColor(new Color(135, 206, 235));
-        getBackground().fill();
-        
-        showText("Little Insect World", 300, 50);
+        //getBackground().setColor(new Color(135, 206, 235));
+        //getBackground().fill();
         
         start_button start = new start_button();
-        addObject(start, 300, 150);
+        addObject(start, 435, 175);
         
-        showText("START", 300, 150);
+        showText("START", 435, 175);
         
         quit_button quit = new quit_button();
-        addObject(quit, 300, 300);
+        addObject(quit, 435, 275);
         
-        showText("QUIT", 300, 300);
+        showText("QUIT", 435, 275);
     }
 }
