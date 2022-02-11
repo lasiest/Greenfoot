@@ -8,18 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends World
 {
-
-    /**
-     * Constructor for objects of class Menu.
-     * 
-     */
+    GreenfootSound backgroundMusic = new GreenfootSound("hiding-in-a-field-of-flowers.mp3");
     public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        
-        //getBackground().setColor(new Color(135, 206, 235));
-        //getBackground().fill();
+        backgroundMusic.playLoop();
         
         start_button start = new start_button();
         addObject(start, 435, 175);
