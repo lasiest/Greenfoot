@@ -13,6 +13,7 @@ public class MyWorld extends World
     
     SimpleTimer tim = new SimpleTimer();
     static Counter timeCount = new Counter();
+    
     /**
      * Constructor for objects of class MyWorld.
      * 

@@ -18,7 +18,6 @@ public class enemy_1 extends Actor
     {
         setLocation(getX(), (int)(getY()+dy));
         
-        
         if(isTouching(platform.class)){
             dy = 0;
         }else{
