@@ -34,7 +34,10 @@ public class enemy_1 extends Actor
         }
         else if(flag == 1)
         {
+            getImage().mirrorVertically();
+            //getImage().mirrorHorizontally();
             turn(180);
+            
             flag = 0;
         }
         

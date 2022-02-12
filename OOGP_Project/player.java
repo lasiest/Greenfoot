@@ -14,10 +14,12 @@ public class player extends Actor
     private boolean leftButton;
 
     
+    int arah = 1;
+    
     public player()
     {
         GreenfootImage image = getImage();  
-        image.scale(30, 30);
+        image.scale(32, 32);
         setImage(image);
     }
     
@@ -35,10 +37,18 @@ public class player extends Actor
         if(!rightButton && Greenfoot.isKeyDown("right")){
             rightButton = true;
             Greenfoot.playSound("slingshot.mp3");
+            if(arah == 2){
+            getImage().mirrorHorizontally();
+            }
+            arah = 1;
             fireRight();
         }else if(!leftButton && Greenfoot.isKeyDown("left")){
             leftButton = true;
             Greenfoot.playSound("slingshot.mp3");
+            if(arah == 1){
+            getImage().mirrorHorizontally();
+            }
+            arah = 2;
             fireLeft();
         }
         

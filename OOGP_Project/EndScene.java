@@ -33,10 +33,10 @@ public class EndScene extends World
         
         showText("RESTART", 200, 300);
         
-        quit_button quit = new quit_button();
-        addObject(quit, 400, 300);
+        menu_button menu = new menu_button();
+        addObject(menu, 400, 300);
         
-        showText("QUIT", 400, 300);
+        showText("MENU", 400, 300);
         
         MyWorld.score = 0;
     }
