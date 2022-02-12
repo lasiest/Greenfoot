@@ -34,9 +34,11 @@ public class player extends Actor
        
         if(!rightButton && Greenfoot.isKeyDown("right")){
             rightButton = true;
+            Greenfoot.playSound("slingshot.mp3");
             fireRight();
         }else if(!leftButton && Greenfoot.isKeyDown("left")){
             leftButton = true;
+            Greenfoot.playSound("slingshot.mp3");
             fireLeft();
         }
         

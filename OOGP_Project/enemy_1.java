@@ -44,6 +44,7 @@ public class enemy_1 extends Actor
             removeTouching(Blob.class);
             if(life == 0)
             {
+                Greenfoot.playSound("crush.mp3");
                 MyWorld num = (MyWorld)getWorld();
                 num.addScore(10);
                 getWorld().removeObject(this);
