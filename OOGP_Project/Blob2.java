@@ -11,7 +11,7 @@ public class Blob2 extends player
     public Blob2()
     {
         GreenfootImage image = getImage();
-        image.scale(image.getWidth() - 15, image.getHeight() - 15);
+        image.scale(image.getWidth() - 28, image.getHeight() - 32);
         setImage(image);
     }
     public void act()

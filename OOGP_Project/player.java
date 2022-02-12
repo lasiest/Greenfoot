@@ -19,7 +19,7 @@ public class player extends Actor
     public player()
     {
         GreenfootImage image = getImage();  
-        image.scale(32, 32);
+        image.scale(36, 42);
         setImage(image);
     }
     
